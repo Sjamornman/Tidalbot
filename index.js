@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser')
 var request = require('request')
 
-app.use(bodyParser.json())
+//app.use(bodyParser.json())
 
 app.get('/', function(req, res){
   res.send('hello world');
@@ -26,7 +26,7 @@ app.post('/webhook/', function (req, res) {
       // Handle a text message from this sender
       console.log(text);
       sendTextMessage(sender, 'bot msg : ' +text);
-      
+
     }
   }
   res.sendStatus(200);
