@@ -2,9 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
 var request = require('request')
-var parks = '{"b1":"t","b2":"t","b3":"t","b4":"t"}';
 
-//app.use(bodyParser.json())
+app.use(bodyParser.json())
 
 app.get('/', function(req, res){
   res.send('hello world');
@@ -18,24 +17,18 @@ app.get('/webhook/', function (req, res) {
 });
 
 app.post('/webhook/', function (req, res) {
-
   var messaging_events = req.body.entry[0].messaging;
   for (var i = 0; i < messaging_events.length; i++) {
     var event = req.body.entry[0].messaging[i];
     var sender = event.sender.id;
     if (event.message && event.message.text) {
-    	var text = event.message.text;
-    	if ( text == 'park') {
-    		for (var j = 0; j < 4; j++) {
-				
-				// Handle a text message from this sender
-				console.log(text);
-				sendTextMessage(sender, 'bot msg : ');
-				
-
-    		}
-		}
-		
+      var text = event.message.text;
+      if (text == 'park'){
+      	 console.log(text);
+      sendTextMessage(sender, 'bot msg : ' +text);
+      }
+      // Handle a text message from this sender
+     
 
     }
   }
