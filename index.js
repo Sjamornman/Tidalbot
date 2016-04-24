@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
 var request = require('request')
-var park = {'t','f','t','f'};
+var park = {"b1":"t","b2":"t","b3":"t","b4":"t"};
 
 //app.use(bodyParser.json())
 
@@ -29,7 +29,7 @@ app.post('/webhook/', function (req, res) {
 				var text = event.message.text;
 				// Handle a text message from this sender
 				console.log(text);
-				sendTextMessage(sender, 'bot msg : ' +park[j]);
+				sendTextMessage(sender, 'bot msg : ' +park.b[j+1].[j]);
 				
 
     		}
