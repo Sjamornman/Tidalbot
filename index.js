@@ -30,7 +30,7 @@ app.post('/webhook/', function (req, res) {
 				
 				// Handle a text message from this sender
 				console.log(text);
-				sendTextMessage(sender, 'bot msg : ' + parks.b[j+1][j]);
+				sendTextMessage(sender, 'bot msg : ');
 				
 
     		}
