@@ -24,9 +24,10 @@ app.post('/webhook/', function (req, res) {
     var event = req.body.entry[0].messaging[i];
     var sender = event.sender.id;
     if (event.message && event.message.text) {
-    	if (text == 'park') {
+    	var text = event.message.text;
+    	if ( text == 'park') {
     		for (var j = 0; j < 4; j++) {
-				var text = event.message.text;
+				
 				// Handle a text message from this sender
 				console.log(text);
 				sendTextMessage(sender, 'bot msg : ' + parks.b[j+1].[j]);
