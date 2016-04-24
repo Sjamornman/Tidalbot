@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
 var request = require('request')
-var park = {"b1":"t","b2":"t","b3":"t","b4":"t"};
+var park = '{"b1":"t","b2":"t","b3":"t","b4":"t"}';
 
 //app.use(bodyParser.json())
 
